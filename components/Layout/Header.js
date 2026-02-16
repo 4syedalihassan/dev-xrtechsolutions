@@ -69,7 +69,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-primary shadow-sm transition-colors duration-200" style={{ backgroundColor: 'var(--bg-primary)', borderColor: 'var(--border-primary)' }}>
+    <header className="sticky top-0 z-50 border-b border-primary shadow-sm transition-colors duration-200 bg-white dark:bg-slate-900" style={{ borderColor: 'var(--border-primary)' }}>
       <div className="flex items-center justify-between h-16 px-6">
         {/* Logo Section - Left */}
         <Link href="/" className="flex items-center h-full">
