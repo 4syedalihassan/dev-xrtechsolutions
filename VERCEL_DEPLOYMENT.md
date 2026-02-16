@@ -36,6 +36,22 @@ The `vercel.json` file includes:
 - esbuild binary path configuration
 - API function memory and timeout settings
 
+## Recent Fixes (February 2026)
+
+### Fixed: Build Failure with Error Code 127
+**Problem**: Vercel build was failing with:
+```
+npm error node: error while loading shared libraries: libatomic.so.1: cannot open shared object file
+npm error Command "npm install" exited with 127
+```
+
+**Root Cause**: The `package.json` had an incorrect `"node": "^25.6.1"` package in dependencies. The "node" npm package is not the Node.js runtime and should never be a dependency.
+
+**Solution**: 
+- Removed the incorrect "node" package from dependencies
+- Updated Node.js engine requirement to `>=20.0.0` for better Vercel compatibility
+- Added missing `stripe` package that was causing build warnings
+
 ## Troubleshooting
 
 If deployment still fails:
@@ -43,7 +59,8 @@ If deployment still fails:
 2. Ensure your Supabase project is accessible
 3. Check Vercel build logs for specific errors
 4. Try redeploying after clearing build cache
+5. Verify that dependencies don't include the "node" package
 
 ## Node Version
 
-Vercel will automatically use Node.js 20.x (latest LTS) unless specified otherwise.
+The project now requires Node.js 20.x or later. Vercel will automatically use Node.js 20.x (latest LTS) unless specified otherwise.
