@@ -122,10 +122,17 @@ export default function Footer() {
           <div className="lg:col-span-4 space-y-6">
             <div>
               <Link href="/" className="inline-block">
-                {/* Logo Placeholder - You can replace with <img /> if available in settings */}
-                <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
-                  {settings?.store_name || 'XR Tech'}
-                </span>
+                {settings?.store_logo ? (
+                  <img
+                    src={settings.store_logo}
+                    alt={settings.store_name || 'XR Tech'}
+                    className="h-10 w-auto object-contain"
+                  />
+                ) : (
+                  <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+                    {settings?.store_name || 'XR Tech'}
+                  </span>
+                )}
               </Link>
               <p className="mt-4 text-sm leading-relaxed text-gray-600 dark:text-gray-400 max-w-sm">
                 {settings?.tagline || 'Experience the future of shopping with our immersive 3D virtual store. Quality products, next-gen technology.'}
