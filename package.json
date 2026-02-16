@@ -23,7 +23,7 @@
   "license": "ISC",
   "description": "",
   "engines": {
-    "node": ">=18.17.0",
+    "node": ">=20.0.0",
     "npm": ">=9.0.0"
   },
   "dependencies": {
@@ -38,12 +38,12 @@
     "date-fns": "^4.1.0",
     "formidable": "^3.5.4",
     "next": "^15.5.12",
-    "node": "^25.6.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-icons": "^5.5.0",
     "react-is": "^19.2.0",
     "recharts": "^3.4.1",
+    "stripe": "^17.5.0",
     "three": "^0.179.1",
     "three-stdlib": "^2.36.0"
   },
