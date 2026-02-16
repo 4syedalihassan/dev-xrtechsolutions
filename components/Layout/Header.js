@@ -31,7 +31,7 @@ export default function Header() {
     } catch (error) {
       console.error('Failed to load settings:', error);
       setSettings({
-        store_name: 'XR Tech Solutions',
+        store_name: '',
         store_logo: null,
         store_logo_dark: null,
         favicon_url: '/favicons/favicon.svg'
@@ -78,21 +78,21 @@ export default function Header() {
             {settings?.store_logo ? (
               <img
                 src={settings.store_logo}
-                alt={settings?.store_name || 'XR Tech Solutions'}
+                alt={settings?.store_name || ''}
                 className="h-12 w-auto object-contain dark:hidden"
                 onError={(e) => {
                   e.target.style.display = 'none';
                 }}
               />
             ) : (
-              <span className="text-xl font-bold text-gray-800 dark:hidden">XR Tech Solutions</span>
+              <span className="text-xl font-bold text-gray-800 dark:hidden"> </span>
             )}
 
             {/* Dark theme logo */}
             {settings?.store_logo_dark || settings?.store_logo ? (
               <img
                 src={settings?.store_logo_dark || settings?.store_logo}
-                alt={settings?.store_name || 'XR Tech Solutions'}
+                alt={settings?.store_name || ''}
                 className="h-12 w-auto object-contain hidden dark:block"
                 style={{ filter: !settings?.store_logo_dark ? 'brightness(0) invert(1)' : 'none' }}
                 onError={(e) => {
@@ -100,7 +100,7 @@ export default function Header() {
                 }}
               />
             ) : (
-              <span className="text-xl font-bold text-white hidden dark:block">XR Tech Solutions</span>
+              <span className="text-xl font-bold text-white hidden dark:block"> </span>
             )}
           </div>
         </Link>
