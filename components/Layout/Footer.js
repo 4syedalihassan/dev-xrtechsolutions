@@ -23,7 +23,7 @@ export default function Footer() {
     } catch (error) {
       console.error('Failed to load settings:', error);
       setSettings({
-        store_name: 'XR Tech Solutions',
+        store_name: '',
         tagline: 'Immersive Shopping Experience',
         social_media_links: {
           facebook: '',
@@ -127,27 +127,27 @@ export default function Footer() {
                     {settings?.store_logo && (
                       <img
                         src={settings.store_logo}
-                        alt={settings.store_name || 'XR Tech'}
+                        alt={settings.store_name || ''}
                         className="h-10 w-auto object-contain dark:hidden"
                       />
                     )}
                     {settings?.store_logo_dark ? (
                       <img
                         src={settings.store_logo_dark}
-                        alt={settings.store_name || 'XR Tech'}
+                        alt={settings.store_name || ''}
                         className="h-12 w-auto object-contain hidden dark:block"
                       />
                     ) : settings?.store_logo && (
                       <img
                         src={settings.store_logo}
-                        alt={settings.store_name || 'XR Tech'}
+                        alt={settings.store_name || ''}
                         className="h-12 w-auto object-contain hidden dark:block"
                       />
                     )}
                   </>
                 ) : (
                   <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
-                    {settings?.store_name || 'XR Tech'}
+                    {settings?.store_name || ''}
                   </span>
                 )}
               </Link>
