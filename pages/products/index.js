@@ -319,8 +319,8 @@ export default function ProductsPage() {
         }
 
         .page-header {
-          background: var(--bg-tertiary);
-          color: var(--text-primary);
+          background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+          color: white;
           padding: 60px 20px;
           text-align: center;
           margin-bottom: 40px;
@@ -331,11 +331,13 @@ export default function ProductsPage() {
           font-size: 42px;
           font-weight: 700;
           margin-bottom: 12px;
+          color: white;
         }
 
         .page-header p {
           font-size: 18px;
           opacity: 0.95;
+          color: rgba(255, 255, 255, 0.9);
         }
 
         .container {
