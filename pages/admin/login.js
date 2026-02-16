@@ -274,12 +274,14 @@ function AdminLogin() {
         }
 
         .footer-link a {
-          color: var(--primary-color);
+          color: var(--text-primary);
           text-decoration: none;
           font-weight: 600;
+          transition: color 0.2s;
         }
 
         .footer-link a:hover {
+          color: var(--primary-color);
           text-decoration: underline;
         }
       `}</style>
