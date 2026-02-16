@@ -1,0 +1,39 @@
+# Netlify configuration for Next.js 15 with SSR
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+# Use the official Netlify Next.js plugin
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Asset caching headers for optimal performance
+# Cache HDRI environment maps (immutable, long-term cache)
+[[headers]]
+  for = "/hdri/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
+
+# Cache PBR textures (immutable, long-term cache)
+[[headers]]
+  for = "/textures/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
+
+# Cache 3D models (immutable, long-term cache)
+[[headers]]
+  for = "/models/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
+
+# Security headers for the site
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

@@ -1,0 +1,66 @@
+/* Typography System - Based on Design Tokens */
+/* Sprint 5 - US-5.8: Typography System */
+/* WCAG 2.1 AA Compliant Typography */
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text-primary);
+  margin-top: 0;
+  margin-bottom: var(--spacing-md);
+}
+
+h1 { font-size: var(--font-size-4xl); }
+h2 { font-size: var(--font-size-3xl); }
+h3 { font-size: var(--font-size-2xl); }
+h4 { font-size: var(--font-size-xl); }
+h5 { font-size: var(--font-size-lg); }
+h6 { font-size: var(--font-size-base); }
+
+/* Paragraphs */
+p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-primary);
+  margin-top: 0;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Text Utilities */
+.text-xs { font-size: var(--font-size-xs); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+.text-2xl { font-size: var(--font-size-2xl); }
+
+.font-normal { font-weight: var(--font-weight-normal); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-bold { font-weight: var(--font-weight-bold); }
+
+.text-primary { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-success { color: var(--color-success); }
+.text-warning { color: var(--color-warning); }
+.text-danger { color: var(--color-danger); }
+
+/* Links */
+a {
+  color: var(--color-primary-dark);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}

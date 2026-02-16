@@ -1,0 +1,548 @@
+/**
+ * Modern Design System - Sprint 8 Visual Redesign
+ * XR Tech Solutions Marketplace
+ *
+ * Based on 2024/2025 Design Trends:
+ * - Glassmorphism (frosted glass effects)
+ * - Vibrant multi-color gradients
+ * - Depth and layering
+ * - Smooth micro-interactions
+ * - Modern color psychology
+ *
+ * Performance Optimized:
+ * - Hardware-accelerated transforms
+ * - Efficient backdrop-filter usage
+ * - Reduced motion support
+ */
+
+:root {
+  /* ============================================
+     GLASSMORPHISM COLORS
+     ============================================ */
+
+  /* Glass Background Colors (with transparency) */
+  --glass-white: rgba(255, 255, 255, 0.7);
+  --glass-white-light: rgba(255, 255, 255, 0.5);
+  --glass-white-lighter: rgba(255, 255, 255, 0.3);
+  --glass-dark: rgba(26, 29, 41, 0.7);
+  --glass-dark-light: rgba(45, 49, 66, 0.6);
+  --glass-primary: rgba(74, 144, 226, 0.15);
+  --glass-accent: rgba(139, 92, 246, 0.15);
+
+  /* Glass Border Colors */
+  --glass-border-light: rgba(255, 255, 255, 0.18);
+  --glass-border-medium: rgba(255, 255, 255, 0.3);
+  --glass-border-strong: rgba(255, 255, 255, 0.5);
+  --glass-border-dark: rgba(0, 0, 0, 0.1);
+
+  /* Backdrop Blur Levels */
+  --blur-xs: blur(4px);
+  --blur-sm: blur(8px);
+  --blur-md: blur(12px);
+  --blur-lg: blur(16px);
+  --blur-xl: blur(20px);
+  --blur-2xl: blur(24px);
+
+  /* ============================================
+     VIBRANT GRADIENT BACKGROUNDS
+     ============================================ */
+
+  /* Primary Gradients */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-primary-light: linear-gradient(135deg, #a8b5ff 0%, #b49fcc 100%);
+  --gradient-ocean: linear-gradient(135deg, #2E3192 0%, #1BFFFF 100%);
+  --gradient-sunset: linear-gradient(135deg, #FF6B6B 0%, #FFE66D 50%, #4ECDC4 100%);
+  --gradient-aurora: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+
+  /* Tech/Futuristic Gradients */
+  --gradient-cyber: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  --gradient-matrix: linear-gradient(135deg, #0F2027 0%, #203A43 50%, #2C5364 100%);
+  --gradient-neon: linear-gradient(135deg, #FA8BFF 0%, #2BD2FF 50%, #2BFF88 100%);
+  --gradient-holographic: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+
+  /* Dashboard Gradients */
+  --gradient-dashboard-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  --gradient-card-hover: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+
+  /* Stats Card Gradients */
+  --gradient-stat-purple: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-stat-blue: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --gradient-stat-green: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  --gradient-stat-orange: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  --gradient-stat-pink: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-stat-teal: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+
+  /* ============================================
+     MODERN SHADOW SYSTEM (Enhanced Depth)
+     ============================================ */
+
+  /* Glassmorphic Shadows */
+  --shadow-glass-sm: 0 4px 6px rgba(0, 0, 0, 0.07),
+                     0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-glass-md: 0 8px 16px rgba(0, 0, 0, 0.1),
+                     0 4px 8px rgba(0, 0, 0, 0.06);
+  --shadow-glass-lg: 0 12px 24px rgba(0, 0, 0, 0.12),
+                     0 6px 12px rgba(0, 0, 0, 0.08);
+  --shadow-glass-xl: 0 20px 40px rgba(0, 0, 0, 0.15),
+                     0 10px 20px rgba(0, 0, 0, 0.1);
+
+  /* Colored Shadows (for glowing effects) */
+  --shadow-glow-primary: 0 8px 32px rgba(102, 126, 234, 0.3);
+  --shadow-glow-accent: 0 8px 32px rgba(139, 92, 246, 0.3);
+  --shadow-glow-success: 0 8px 32px rgba(67, 233, 123, 0.3);
+  --shadow-glow-warning: 0 8px 32px rgba(254, 225, 64, 0.3);
+  --shadow-glow-danger: 0 8px 32px rgba(245, 87, 108, 0.3);
+
+  /* Elevation Shadows */
+  --shadow-elevated-1: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-elevated-2: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-elevated-3: 0 8px 24px rgba(0, 0, 0, 0.1);
+  --shadow-elevated-4: 0 16px 48px rgba(0, 0, 0, 0.12);
+  --shadow-elevated-5: 0 24px 64px rgba(0, 0, 0, 0.16);
+
+  /* ============================================
+     MODERN COLOR PALETTE (Vibrant & Saturated)
+     ============================================ */
+
+  /* Primary Colors (More Vibrant) */
+  --color-modern-primary: #667eea;
+  --color-modern-primary-light: #a8b5ff;
+  --color-modern-primary-dark: #4c5fd5;
+
+  /* Accent Colors */
+  --color-modern-accent: #8b5cf6;
+  --color-modern-accent-light: #c4b5fd;
+  --color-modern-accent-dark: #7c3aed;
+
+  /* Semantic Colors (Enhanced Vibrancy) */
+  --color-modern-success: #10b981;
+  --color-modern-success-light: #34d399;
+  --color-modern-warning: #f59e0b;
+  --color-modern-warning-light: #fbbf24;
+  --color-modern-danger: #ef4444;
+  --color-modern-danger-light: #f87171;
+  --color-modern-info: #06b6d4;
+  --color-modern-info-light: #22d3ee;
+
+  /* Neutral Colors (Refined) */
+  --color-modern-gray-50: #f9fafb;
+  --color-modern-gray-100: #f3f4f6;
+  --color-modern-gray-200: #e5e7eb;
+  --color-modern-gray-300: #d1d5db;
+  --color-modern-gray-400: #9ca3af;
+  --color-modern-gray-500: #6b7280;
+  --color-modern-gray-600: #4b5563;
+  --color-modern-gray-700: #374151;
+  --color-modern-gray-800: #1f2937;
+  --color-modern-gray-900: #111827;
+
+  /* ============================================
+     ANIMATION & TRANSITIONS (Smooth)
+     ============================================ */
+
+  /* Timing Functions */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-elastic: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+
+  /* Duration */
+  --duration-instant: 100ms;
+  --duration-fast: 200ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --duration-slower: 700ms;
+
+  /* Combined Transitions */
+  --transition-smooth: all var(--duration-normal) var(--ease-smooth);
+  --transition-bounce: all var(--duration-normal) var(--ease-bounce);
+  --transition-elastic: all var(--duration-slow) var(--ease-elastic);
+  --transition-fade: opacity var(--duration-fast) var(--ease-smooth);
+
+  /* ============================================
+     MODERN SPACING (Enhanced Scale)
+     ============================================ */
+
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+
+  /* ============================================
+     MODERN BORDER RADIUS (Larger for Modern Look)
+     ============================================ */
+
+  --radius-xs: 0.25rem;   /* 4px */
+  --radius-sm: 0.5rem;    /* 8px */
+  --radius-md: 0.75rem;   /* 12px */
+  --radius-lg: 1rem;      /* 16px */
+  --radius-xl: 1.25rem;   /* 20px */
+  --radius-2xl: 1.5rem;   /* 24px */
+  --radius-3xl: 2rem;     /* 32px */
+  --radius-full: 9999px;
+
+  /* ============================================
+     MODERN TYPOGRAPHY (Enhanced Hierarchy)
+     ============================================ */
+
+  /* Font Families */
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+
+  /* Font Sizes (Enhanced Scale) */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 1.875rem;   /* 30px */
+  --text-4xl: 2.25rem;    /* 36px */
+  --text-5xl: 3rem;       /* 48px */
+  --text-6xl: 3.75rem;    /* 60px */
+
+  /* Font Weights */
+  --weight-light: 300;
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  /* ============================================
+     Z-INDEX SCALE (Enhanced)
+     ============================================ */
+
+  --z-base: 1;
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-notification: 1080;
+  --z-maximum: 9999;
+}
+
+/* ============================================
+   GLASSMORPHISM UTILITY CLASSES
+   ============================================ */
+
+/* Glass Card Base */
+.glass-card {
+  background: var(--glass-white);
+  backdrop-filter: var(--blur-md);
+  -webkit-backdrop-filter: var(--blur-md);
+  border: 1px solid var(--glass-border-light);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-glass-md);
+  transition: var(--transition-smooth);
+}
+
+.glass-card:hover {
+  background: var(--glass-white-light);
+  border-color: var(--glass-border-medium);
+  box-shadow: var(--shadow-glass-lg);
+  transform: translateY(-4px);
+}
+
+/* Glass Card Variants */
+.glass-card-dark {
+  background: var(--glass-dark);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.glass-card-primary {
+  background: var(--glass-primary);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.glass-card-accent {
+  background: var(--glass-accent);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+/* Glass Panels */
+.glass-panel {
+  background: var(--glass-white);
+  backdrop-filter: var(--blur-lg);
+  -webkit-backdrop-filter: var(--blur-lg);
+  border: 1px solid var(--glass-border-medium);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-glass-lg);
+}
+
+/* Glass Sidebar */
+.glass-sidebar {
+  background: var(--glass-dark);
+  backdrop-filter: var(--blur-xl);
+  -webkit-backdrop-filter: var(--blur-xl);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-glass-xl);
+}
+
+/* Glass Header */
+.glass-header {
+  background: var(--glass-white);
+  backdrop-filter: var(--blur-lg);
+  -webkit-backdrop-filter: var(--blur-lg);
+  border-bottom: 1px solid var(--glass-border-dark);
+  box-shadow: var(--shadow-glass-sm);
+}
+
+/* ============================================
+   GRADIENT UTILITY CLASSES
+   ============================================ */
+
+.gradient-bg-primary { background: var(--gradient-primary); }
+.gradient-bg-ocean { background: var(--gradient-ocean); }
+.gradient-bg-sunset { background: var(--gradient-sunset); }
+.gradient-bg-aurora { background: var(--gradient-aurora); }
+.gradient-bg-cyber { background: var(--gradient-cyber); }
+.gradient-bg-matrix { background: var(--gradient-matrix); }
+.gradient-bg-neon { background: var(--gradient-neon); }
+.gradient-bg-holographic { background: var(--gradient-holographic); }
+
+/* Gradient Text */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: var(--weight-bold);
+}
+
+/* ============================================
+   MODERN ANIMATION KEYFRAMES
+   ============================================ */
+
+/* Fade In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide Up */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide Down */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scale In */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Pulse */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+/* Shimmer (for loading states) */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Float (subtle hover) */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Glow Pulse */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(102, 126, 234, 0.6);
+  }
+}
+
+/* Spin */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   ANIMATION UTILITY CLASSES
+   ============================================ */
+
+.animate-fade-in {
+  animation: fadeIn var(--duration-normal) var(--ease-smooth);
+}
+
+.animate-slide-up {
+  animation: slideUp var(--duration-normal) var(--ease-smooth);
+}
+
+.animate-slide-down {
+  animation: slideDown var(--duration-normal) var(--ease-smooth);
+}
+
+.animate-scale-in {
+  animation: scaleIn var(--duration-normal) var(--ease-bounce);
+}
+
+.animate-pulse {
+  animation: pulse 2s var(--ease-smooth) infinite;
+}
+
+.animate-float {
+  animation: float 3s var(--ease-smooth) infinite;
+}
+
+.animate-glow {
+  animation: glowPulse 2s var(--ease-smooth) infinite;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* ============================================
+   HOVER EFFECTS (Micro-interactions)
+   ============================================ */
+
+.hover-lift {
+  transition: var(--transition-smooth);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glass-lg);
+}
+
+.hover-glow {
+  transition: var(--transition-smooth);
+}
+
+.hover-glow:hover {
+  box-shadow: var(--shadow-glow-primary);
+}
+
+.hover-scale {
+  transition: var(--transition-smooth);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-brighten {
+  transition: var(--transition-smooth);
+}
+
+.hover-brighten:hover {
+  filter: brightness(1.1);
+}
+
+/* ============================================
+   ACCESSIBILITY & REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-pulse,
+  .animate-float,
+  .animate-glow,
+  .animate-spin {
+    animation: none !important;
+  }
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+
+/* Hardware acceleration for transforms */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Efficient backdrop-filter fallback */
+@supports not (backdrop-filter: blur(12px)) {
+  .glass-card,
+  .glass-panel,
+  .glass-header,
+  .glass-sidebar {
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .glass-card-dark {
+    background: rgba(26, 29, 41, 0.95);
+  }
+}

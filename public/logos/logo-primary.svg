@@ -1,0 +1,37 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- XR Icon -->
+  <g id="xr-icon">
+    <!-- Outer hexagon -->
+    <path d="M30 8 L42 15 L42 30 L30 37 L18 30 L18 15 Z" stroke="url(#gradient)" stroke-width="2" fill="none"/>
+
+    <!-- X -->
+    <line x1="24" y1="20" x2="32" y2="28" stroke="url(#gradient)" stroke-width="2" stroke-linecap="round"/>
+    <line x1="32" y1="20" x2="24" y2="28" stroke="url(#gradient)" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- R -->
+    <path d="M34 20 L34 28 M34 20 L38 20 Q40 20 40 22 Q40 24 38 24 L34 24 M38 24 L40 28" stroke="url(#gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+    <!-- Inner glow circle -->
+    <circle cx="30" cy="24" r="8" fill="url(#radialGlow)" opacity="0.3"/>
+  </g>
+
+  <!-- Text -->
+  <text x="52" y="28" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#667eea">
+    XR Tech
+  </text>
+  <text x="52" y="42" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#764ba2">
+    Solutions
+  </text>
+
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="radialGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+</svg>

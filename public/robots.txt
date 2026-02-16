@@ -1,0 +1,19 @@
+# robots.txt for XR Tech Solutions
+# https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /_next/
+Disallow: /checkout
+Disallow: /cart
+Disallow: /orders
+Disallow: /wishlist
+
+# Sitemap location
+Sitemap: https://xrtechsolutions.com/sitemap.xml
+
+# Crawl-delay (optional, adjust based on server capacity)
+# Crawl-delay: 1

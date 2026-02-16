@@ -1,0 +1,503 @@
+/**
+ * Unified Black & White Color System
+ * Single source of truth for all colors in the application
+ * Supports light and dark modes with pure black/white base and grayscale spectrum
+ */
+
+/* ============================================
+   BASE COLOR DEFINITIONS
+   ============================================ */
+
+/* ============================================
+   BASE COLOR DEFINITIONS
+   Merged from Design System V2
+   ============================================ */
+
+:root {
+  /* Primary Colors - Blue */
+  --primary-50: #eff6ff;
+  --primary-100: #dbeafe;
+  --primary-200: #bfdbfe;
+  --primary-300: #93c5fd;
+  --primary-400: #60a5fa;
+  --primary-500: #3b82f6;
+  --primary-600: #2563eb;
+  --primary-700: #1d4ed8;
+  --primary-800: #1e40af;
+  --primary-900: #1e3a8a;
+  --primary-950: #172554;
+
+  /* Accent Colors */
+  --accent-purple-50: #faf5ff;
+  --accent-purple-100: #f3e8ff;
+  --accent-purple-500: #8b5cf6;
+  --accent-purple-600: #7c3aed;
+  --accent-purple-700: #6d28d9;
+
+  --accent-indigo-500: #6366f1;
+  --accent-indigo-600: #4f46e5;
+
+  --accent-pink-500: #ec4899;
+  --accent-pink-600: #db2777;
+
+  --accent-teal-500: #14b8a6;
+  --accent-teal-600: #0d9488;
+
+  --accent-orange-500: #f97316;
+  --accent-orange-600: #ea580c;
+
+  /* Status Colors */
+  --success-50: #f0fdf4;
+  --success-100: #dcfce7;
+  --success-500: #10b981;
+  --success-600: #059669;
+  --success-700: #047857;
+
+  --warning-50: #fffbeb;
+  --warning-100: #fef3c7;
+  --warning-500: #f59e0b;
+  --warning-600: #d97706;
+  --warning-700: #b45309;
+
+  --error-50: #fef2f2;
+  --error-100: #fee2e2;
+  --error-500: #ef4444;
+  --error-600: #dc2626;
+  --error-700: #b91c1c;
+
+  --info-50: #ecfeff;
+  --info-100: #cffafe;
+  --info-500: #06b6d4;
+  --info-600: #0891b2;
+  --info-700: #0e7490;
+
+  /* Grayscale Spectrum */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --gray-950: #030712;
+
+  /* Legacy color aliases */
+  --color-primary: var(--primary-500);
+  --color-primary-light: var(--primary-300);
+  --color-primary-dark: var(--primary-700);
+  --color-secondary: var(--gray-600);
+}
+
+/* ============================================
+   LIGHT MODE SEMANTIC COLORS
+   ============================================ */
+
+:root {
+  /* Backgrounds */
+  --bg-primary: var(--color-white);
+  --bg-secondary: var(--gray-50);
+  --bg-tertiary: var(--gray-100);
+  --bg-emphasis: var(--color-black);
+
+  /* Text Colors */
+  --text-primary: var(--color-black);
+  --text-secondary: var(--gray-900);
+  --text-tertiary: var(--gray-700);
+  --text-disabled: var(--gray-400);
+  --text-inverse: var(--color-white);
+
+  /* Borders */
+  --border-primary: var(--gray-200);
+  --border-secondary: var(--gray-300);
+  --border-emphasis: var(--color-black);
+  --border-subtle: var(--gray-100);
+
+  /* Shadows */
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 1px 3px 0 var(--shadow-color);
+  --shadow-md: 0 4px 6px -1px var(--shadow-color);
+  --shadow-lg: 0 10px 15px -3px var(--shadow-color);
+  --shadow-xl: 0 20px 25px -5px var(--shadow-color);
+
+  /* Interactive Elements */
+  --interactive-default: var(--color-black);
+  --interactive-hover: var(--gray-800);
+  --interactive-active: var(--gray-900);
+  --interactive-disabled: var(--gray-400);
+
+  /* Focus Ring */
+  --focus-ring: 0 0 0 3px var(--gray-300);
+  --focus-ring-offset: var(--color-white);
+}
+
+/* ============================================
+   DARK MODE SEMANTIC COLORS
+   ============================================ */
+
+.dark {
+  /* Backgrounds */
+  --bg-primary: var(--color-black);
+  --bg-secondary: var(--gray-900);
+  --bg-tertiary: var(--gray-800);
+  --bg-emphasis: var(--color-white);
+
+  /* Text Colors */
+  --text-primary: var(--color-white);
+  --text-secondary: var(--gray-50);
+  --text-tertiary: var(--gray-300);
+  --text-disabled: var(--gray-600);
+  --text-inverse: var(--color-black);
+
+  /* Borders */
+  --border-primary: var(--gray-700);
+  --border-secondary: var(--gray-600);
+  --border-emphasis: var(--color-white);
+  --border-subtle: var(--gray-800);
+
+  /* Shadows */
+  --shadow-color: rgba(255, 255, 255, 0.1);
+  --shadow-sm: 0 1px 3px 0 var(--shadow-color);
+  --shadow-md: 0 4px 6px -1px var(--shadow-color);
+  --shadow-lg: 0 10px 15px -3px var(--shadow-color);
+  --shadow-xl: 0 20px 25px -5px var(--shadow-color);
+
+  /* Interactive Elements */
+  --interactive-default: var(--color-white);
+  --interactive-hover: var(--gray-200);
+  --interactive-active: var(--gray-100);
+  --interactive-disabled: var(--gray-600);
+
+  /* Focus Ring */
+  --focus-ring: 0 0 0 3px var(--gray-700);
+  --focus-ring-offset: var(--color-black);
+}
+
+/* ============================================
+   GRADIENT UTILITIES
+   ============================================ */
+
+:root {
+  /* Light Mode Gradients */
+  --gradient-subtle: linear-gradient(180deg, var(--color-white) 0%, var(--gray-100) 100%);
+  --gradient-medium: linear-gradient(180deg, var(--gray-100) 0%, var(--gray-300) 100%);
+  --gradient-strong: linear-gradient(180deg, var(--gray-300) 0%, var(--gray-500) 100%);
+  --gradient-inverse: linear-gradient(180deg, var(--gray-900) 0%, var(--color-black) 100%);
+
+  /* Radial Gradients */
+  --gradient-radial-light: radial-gradient(circle, var(--color-white) 0%, var(--gray-200) 100%);
+  --gradient-radial-dark: radial-gradient(circle, var(--gray-800) 0%, var(--color-black) 100%);
+}
+
+.dark {
+  /* Dark Mode Gradients */
+  --gradient-subtle: linear-gradient(180deg, var(--color-black) 0%, var(--gray-900) 100%);
+  --gradient-medium: linear-gradient(180deg, var(--gray-900) 0%, var(--gray-700) 100%);
+  --gradient-strong: linear-gradient(180deg, var(--gray-700) 0%, var(--gray-500) 100%);
+  --gradient-inverse: linear-gradient(180deg, var(--gray-100) 0%, var(--color-white) 100%);
+
+  /* Radial Gradients */
+  --gradient-radial-light: radial-gradient(circle, var(--gray-800) 0%, var(--color-black) 100%);
+  --gradient-radial-dark: radial-gradient(circle, var(--color-black) 0%, var(--gray-900) 100%);
+}
+
+/* ============================================
+   GLASSMORPHISM EFFECTS
+   ============================================ */
+
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+  --glass-bg: rgba(0, 0, 0, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.05);
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+/* ============================================
+   STATUS INDICATORS
+   ============================================ */
+
+/* Success Indicator */
+.status-success {
+  background-color: var(--bg-primary);
+  border: 2px solid var(--border-emphasis);
+  color: var(--text-primary);
+}
+
+.dark .status-success {
+  background-color: var(--bg-primary);
+  border: 2px solid var(--border-emphasis);
+  color: var(--text-primary);
+}
+
+/* Error Indicator */
+.status-error {
+  background-color: var(--bg-emphasis);
+  border: 3px solid var(--border-emphasis);
+  color: var(--text-inverse);
+}
+
+.dark .status-error {
+  background-color: var(--bg-emphasis);
+  border: 3px solid var(--color-black);
+  color: var(--text-inverse);
+}
+
+/* Warning Indicator */
+.status-warning {
+  background-color: var(--bg-secondary);
+  border: 2px dashed var(--gray-900);
+  color: var(--text-primary);
+}
+
+.dark .status-warning {
+  background-color: var(--bg-secondary);
+  border: 2px dashed var(--gray-100);
+  color: var(--text-primary);
+}
+
+/* Info Indicator */
+.status-info {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-emphasis);
+  color: var(--text-primary);
+}
+
+.dark .status-info {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-emphasis);
+  color: var(--text-primary);
+}
+
+/* Pending Indicator */
+.status-pending {
+  background-color: var(--bg-primary);
+  border: 1px dashed var(--gray-400);
+  color: var(--gray-600);
+}
+
+.dark .status-pending {
+  background-color: var(--bg-primary);
+  border: 1px dashed var(--gray-600);
+  color: var(--gray-400);
+}
+
+/* ============================================
+   COMPONENT-SPECIFIC TOKENS
+   ============================================ */
+
+/* Cards */
+:root {
+  --card-bg: var(--bg-primary);
+  --card-border: var(--border-primary);
+  --card-shadow: var(--shadow-md);
+  --card-radius: 0.5rem;
+  --card-padding: 1.5rem;
+}
+
+.dark {
+  --card-bg: var(--bg-secondary);
+  --card-border: var(--border-primary);
+  --card-shadow: var(--shadow-md);
+}
+
+/* Buttons */
+:root {
+  --button-primary-bg: var(--color-black);
+  --button-primary-text: var(--color-white);
+  --button-primary-hover: var(--gray-800);
+
+  --button-secondary-bg: var(--color-white);
+  --button-secondary-text: var(--color-black);
+  --button-secondary-border: var(--border-emphasis);
+  --button-secondary-hover: var(--gray-50);
+
+  --button-disabled-bg: var(--gray-300);
+  --button-disabled-text: var(--gray-500);
+}
+
+.dark {
+  --button-primary-bg: var(--color-white);
+  --button-primary-text: var(--color-black);
+  --button-primary-hover: var(--gray-200);
+
+  --button-secondary-bg: var(--color-black);
+  --button-secondary-text: var(--color-white);
+  --button-secondary-border: var(--border-emphasis);
+  --button-secondary-hover: var(--gray-900);
+
+  --button-disabled-bg: var(--gray-700);
+  --button-disabled-text: var(--gray-500);
+}
+
+/* Forms & Inputs */
+:root {
+  --input-bg: var(--bg-primary);
+  --input-border: var(--border-primary);
+  --input-text: var(--text-primary);
+  --input-placeholder: var(--text-disabled);
+  --input-focus-ring: var(--focus-ring);
+  --input-disabled-bg: var(--gray-100);
+}
+
+.dark {
+  --input-bg: var(--bg-secondary);
+  --input-border: var(--border-primary);
+  --input-text: var(--text-primary);
+  --input-placeholder: var(--text-disabled);
+  --input-focus-ring: var(--focus-ring);
+  --input-disabled-bg: var(--gray-800);
+}
+
+/* Sidebar/Navigation */
+:root {
+  --sidebar-bg: var(--bg-primary);
+  --sidebar-text: var(--text-secondary);
+  --sidebar-hover-bg: var(--gray-100);
+  --sidebar-active-bg: var(--gray-200);
+  --sidebar-active-text: var(--text-primary);
+  --sidebar-border: var(--border-primary);
+}
+
+.dark {
+  --sidebar-bg: var(--bg-secondary);
+  --sidebar-text: var(--text-secondary);
+  --sidebar-hover-bg: var(--gray-800);
+  --sidebar-active-bg: var(--gray-700);
+  --sidebar-active-text: var(--text-primary);
+  --sidebar-border: var(--border-primary);
+}
+
+/* ============================================
+   CHART COLORS (Grayscale Spectrum)
+   ============================================ */
+
+:root {
+  --chart-1: var(--color-black);
+  --chart-2: var(--gray-700);
+  --chart-3: var(--gray-500);
+  --chart-4: var(--gray-400);
+  --chart-5: var(--gray-300);
+  --chart-6: var(--gray-200);
+}
+
+.dark {
+  --chart-1: var(--color-white);
+  --chart-2: var(--gray-300);
+  --chart-3: var(--gray-500);
+  --chart-4: var(--gray-600);
+  --chart-5: var(--gray-700);
+  --chart-6: var(--gray-800);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Background Utilities */
+.bg-primary { background-color: var(--bg-primary); }
+.bg-secondary { background-color: var(--bg-secondary); }
+.bg-tertiary { background-color: var(--bg-tertiary); }
+.bg-emphasis { background-color: var(--bg-emphasis); }
+
+/* Text Utilities */
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-tertiary { color: var(--text-tertiary); }
+.text-disabled { color: var(--text-disabled); }
+.text-inverse { color: var(--text-inverse); }
+
+/* Border Utilities */
+.border-primary { border-color: var(--border-primary); }
+.border-secondary { border-color: var(--border-secondary); }
+.border-emphasis { border-color: var(--border-emphasis); }
+.border-subtle { border-color: var(--border-subtle); }
+
+/* Shadow Utilities
+   Note: Tailwind's built-in `shadow-*` utilities are used for shadows.
+   Configure them via `boxShadow` in `tailwind.config.js` to point at
+   these CSS variables (e.g., var(--shadow-sm), etc.) rather than
+   redefining `.shadow-*` classes here. */
+
+/* Gradient Utilities */
+.gradient-subtle { background: var(--gradient-subtle); }
+.gradient-medium { background: var(--gradient-medium); }
+.gradient-strong { background: var(--gradient-strong); }
+.gradient-inverse { background: var(--gradient-inverse); }
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+/* Focus Indicators */
+*:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --border-primary: var(--color-black);
+    --border-emphasis: var(--color-black);
+  }
+
+  .dark {
+    --border-primary: var(--color-white);
+    --border-emphasis: var(--color-white);
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  :root {
+    --bg-primary: white;
+    --bg-secondary: white;
+    --text-primary: black;
+    --shadow-color: transparent;
+  }
+
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+
+  .glass {
+    background: white !important;
+    backdrop-filter: none !important;
+    border: 1px solid black !important;
+  }
+}

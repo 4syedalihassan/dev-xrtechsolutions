@@ -1,0 +1,407 @@
+/**
+ * Control Panel Styles - Sprint 8 UI/UX Enhancement
+ * Modern glassmorphism design with smooth animations
+ */
+
+.control-panel-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(0, 123, 131, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 123, 131, 0.4),
+              0 0 20px rgba(0, 123, 131, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.control-panel-toggle:hover {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 6px 20px rgba(0, 123, 131, 0.6),
+              0 0 30px rgba(0, 123, 131, 0.4);
+}
+
+.control-panel-toggle:active {
+  transform: scale(0.95);
+}
+
+.control-panel {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 380px;
+  max-height: 600px;
+  background: rgba(10, 10, 20, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 0;
+  z-index: 999;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5),
+              0 0 1px rgba(255, 255, 255, 0.1);
+  animation: slideIn 0.3s ease;
+  overflow: hidden;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.control-panel-header {
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(0, 123, 131, 0.2), rgba(0, 90, 100, 0.2));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.control-panel-header h3 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.control-panel-header .hint {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.control-panel-header kbd {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.control-panel-tabs {
+  display: flex;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.control-panel-tabs .tab {
+  flex: 1;
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.control-panel-tabs .tab:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.control-panel-tabs .tab.active {
+  color: #00FFFF;
+  border-bottom-color: #00FFFF;
+  background: rgba(0, 255, 255, 0.05);
+}
+
+.control-panel-content {
+  padding: 20px;
+  max-height: 450px;
+  overflow-y: auto;
+}
+
+.control-panel-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.control-panel-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.control-panel-content::-webkit-scrollbar-thumb {
+  background: rgba(0, 123, 131, 0.5);
+  border-radius: 4px;
+}
+
+.control-panel-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 123, 131, 0.7);
+}
+
+.tab-content {
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.control-item {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.control-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.control-item label {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.control-item .control-label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.control-item .control-description {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  display: block;
+  line-height: 1.4;
+  max-width: 250px;
+}
+
+.control-item input[type="checkbox"] {
+  width: 50px;
+  height: 26px;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 13px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.control-item input[type="checkbox"]::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.control-item input[type="checkbox"]:checked {
+  background: linear-gradient(135deg, #00FFFF, #007B83);
+  border-color: #00FFFF;
+}
+
+.control-item input[type="checkbox"]:checked::before {
+  left: 24px;
+  background: #ffffff;
+}
+
+.control-item input[type="range"] {
+  width: 100%;
+  height: 6px;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  outline: none;
+  margin: 8px 0;
+}
+
+.control-item input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00FFFF, #007B83);
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 255, 255, 0.4);
+  transition: all 0.2s ease;
+}
+
+.control-item input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 3px 10px rgba(0, 255, 255, 0.6);
+}
+
+.control-item input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00FFFF, #007B83);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 255, 255, 0.4);
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 4px;
+}
+
+.preset-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.preset-buttons button {
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.preset-buttons button:hover {
+  background: rgba(0, 255, 255, 0.1);
+  border-color: rgba(0, 255, 255, 0.3);
+  color: #00FFFF;
+  transform: translateY(-2px);
+}
+
+.preset-buttons button:active {
+  transform: translateY(0);
+}
+
+.help-content h4 {
+  font-size: 16px;
+  color: #00FFFF;
+  margin: 0 0 16px 0;
+  font-weight: 600;
+}
+
+.help-content h4:not(:first-child) {
+  margin-top: 24px;
+}
+
+.help-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.help-item:last-child {
+  border-bottom: none;
+}
+
+.help-item kbd {
+  background: rgba(0, 123, 131, 0.2);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: #00FFFF;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  min-width: 80px;
+  text-align: center;
+}
+
+.help-item span {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  flex: 1;
+  margin-left: 16px;
+}
+
+.help-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0 0;
+}
+
+.help-content li {
+  padding: 8px 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+.help-content li::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background: #00FFFF;
+  border-radius: 50%;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .control-panel {
+    width: calc(100vw - 40px);
+    right: 20px;
+    left: 20px;
+    max-height: 500px;
+  }
+
+  .control-panel-toggle {
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+/* Dark mode optimization */
+@media (prefers-color-scheme: dark) {
+  .control-panel {
+    background: rgba(5, 5, 10, 0.98);
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .control-panel-toggle,
+  .control-panel,
+  .tab-content,
+  .control-item input[type="checkbox"]::before,
+  .preset-buttons button {
+    animation: none;
+    transition: none;
+  }
+}
