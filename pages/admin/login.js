@@ -209,8 +209,8 @@ function AdminLogin() {
         .login-button {
           width: 100%;
           padding: 1rem;
-          background: var(--primary-color);
-          color: white;
+          background: #3b82f6;
+          color: #ffffff !important;
           border: none;
           border-radius: 8px;
           font-size: 1rem;
@@ -223,7 +223,8 @@ function AdminLogin() {
         .login-button:hover:not(:disabled) {
           transform: translateY(-2px);
           box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-          background: var(--primary-dark);
+          background: #2563eb;
+          color: #ffffff !important;
         }
 
         .login-button:disabled {
@@ -343,6 +344,7 @@ function AdminLogin() {
               className="login-button"
               disabled={loading}
               aria-label={loading ? 'Logging in' : 'Login to admin panel'}
+              style={{ color: '#ffffff' }}
             >
               {loading ? 'Logging in...' : 'Login'}
             </button>
