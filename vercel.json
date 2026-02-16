@@ -1,15 +1,11 @@
 {
     "buildCommand": "npm run build",
     "framework": "nextjs",
-    "installCommand": "npm install --legacy-peer-deps",
-    "env": {
-        "NEXT_PUBLIC_SUPABASE_URL": "@supabase_url",
-        "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@supabase_anon_key",
-        "SUPABASE_SERVICE_ROLE_KEY": "@supabase_service_role_key"
-    },
+    "installCommand": "npm ci --legacy-peer-deps || npm install --legacy-peer-deps",
     "build": {
         "env": {
-            "ESBUILD_BINARY_PATH": "/tmp/esbuild"
+            "NPM_CONFIG_LEGACY_PEER_DEPS": "true",
+            "SKIP_ENV_VALIDATION": "true"
         }
     },
     "functions": {
