@@ -319,25 +319,25 @@ export default function ProductsPage() {
         }
 
         .page-header {
-          background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-          color: white;
+          background: var(--bg-secondary);
+          color: var(--text-primary);
           padding: 60px 20px;
           text-align: center;
           margin-bottom: 40px;
-          border-bottom: 1px solid var(--border-subtle);
+          border-bottom: 1px solid var(--border-primary);
         }
 
         .page-header h1 {
           font-size: 42px;
           font-weight: 700;
           margin-bottom: 12px;
-          color: white;
+          color: var(--text-primary);
         }
 
         .page-header p {
           font-size: 18px;
-          opacity: 0.95;
-          color: rgba(255, 255, 255, 0.9);
+          opacity: 0.85;
+          color: var(--text-secondary);
         }
 
         .container {
