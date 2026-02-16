@@ -122,12 +122,29 @@ export default function Footer() {
           <div className="lg:col-span-4 space-y-6">
             <div>
               <Link href="/" className="inline-block">
-                {settings?.store_logo ? (
-                  <img
-                    src={settings.store_logo}
-                    alt={settings.store_name || 'XR Tech'}
-                    className="h-10 w-auto object-contain"
-                  />
+                {settings?.store_logo || settings?.store_logo_dark ? (
+                  <>
+                    {settings?.store_logo && (
+                      <img
+                        src={settings.store_logo}
+                        alt={settings.store_name || 'XR Tech'}
+                        className="h-10 w-auto object-contain dark:hidden"
+                      />
+                    )}
+                    {settings?.store_logo_dark ? (
+                      <img
+                        src={settings.store_logo_dark}
+                        alt={settings.store_name || 'XR Tech'}
+                        className="h-12 w-auto object-contain hidden dark:block"
+                      />
+                    ) : settings?.store_logo && (
+                      <img
+                        src={settings.store_logo}
+                        alt={settings.store_name || 'XR Tech'}
+                        className="h-12 w-auto object-contain hidden dark:block"
+                      />
+                    )}
+                  </>
                 ) : (
                   <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
                     {settings?.store_name || 'XR Tech'}
