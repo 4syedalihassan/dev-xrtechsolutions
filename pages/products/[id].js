@@ -31,7 +31,8 @@ export default function ProductDetailPage() {
     try {
       setLoading(true);
       // Validate and sanitize the product id before using it in the request URL
-      const idStr = typeof id === 'string' ? id : String(id || '');
+      const rawId = Array.isArray(id) ? id[0] : id;
+      const idStr = typeof rawId === 'string' ? rawId : String(rawId ?? '');
       const safeId = idStr.match(/^[a-zA-Z0-9_-]+$/) ? idStr : null;
       if (!safeId) {
         console.error('Invalid product id:', id);
