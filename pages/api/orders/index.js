@@ -5,6 +5,7 @@
 // =====================================================
 
 import { createClient } from '@supabase/supabase-js';
+import crypto from 'crypto';
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -375,10 +376,12 @@ async function generateOrderNumber() {
 
   // Fallback with crypto-secure random UUID if RPC fails
   if (!orderNumberData) {
-    // Use crypto.randomUUID() for secure random generation
-    const uuid = typeof crypto !== 'undefined' && crypto.randomUUID
-      ? crypto.randomUUID()
-      : `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+    // Use crypto.randomUUID() (browser or Node) for secure random generation, with Node crypto fallback
+    const uuid = (typeof globalThis !== 'undefined' && globalThis.crypto && typeof globalThis.crypto.randomUUID === 'function')
+      ? globalThis.crypto.randomUUID()
+      : (typeof crypto.randomUUID === 'function'
+        ? crypto.randomUUID()
+        : crypto.randomBytes(16).toString('hex'));
     return `ORD-${uuid.replace(/-/g, '').substring(0, 16).toUpperCase()}`;
   }
 
