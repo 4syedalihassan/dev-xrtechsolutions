@@ -30,7 +30,15 @@ export default function ProductDetailPage() {
   const loadProduct = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`/api/products/${id}`);
+      // Validate and sanitize the product id before using it in the request URL
+      const idStr = typeof id === 'string' ? id : String(id || '');
+      const safeId = idStr.match(/^[a-zA-Z0-9_-]+$/) ? idStr : null;
+      if (!safeId) {
+        console.error('Invalid product id:', id);
+        setError('Invalid product identifier.');
+        return;
+      }
+      const response = await fetch(`/api/products/${safeId}`);
       const data = await response.json();
 
       if (data.success) {
